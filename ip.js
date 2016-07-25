@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var textArray={ip1:"",ip2:"",ip3:"",ip4:"",ip5:"",ip6:"",ip7:"",ip8:""};
     validCheck();
     addDiv();
     subDiv();
@@ -6,6 +7,7 @@ $(document).ready(function () {
     var ip;
     var id=2;
     var pattern=/\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/;
+    $('.ip_address').focus();
     $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
         translation: {
             'Z': {
@@ -30,30 +32,30 @@ $(document).ready(function () {
     }
 
     function addDiv(){
-        $('#button_pro').on('click','#add',function(){
-            $(this).remove();
-            var txtbox= '<div class="space" id="input_'+id+'"><input class="ip_address" placeholder="Enter IP Here" name="ip" type="text"><span><input type="button" value="Del" id="sub"  class="ip_valid"></span><span><input type="button" value="Add" id="add" class="ip_valid"></span></div>';
-                $('#button_pro').append(txtbox); 
+        $('#button_pre').on('click','#add',function(){
+            //$(this).remove();
+            var txtbox= '<div class="space" id="input_'+id+'"><input class="ip_address" placeholder="Enter IP Here" name="ip" type="text"><span><input type="button" value="Del" id="sub"  class="ip_valid" ></span><span><input type="button" value="Add" id="add" class="ip_valid"></span></div>';
+                $('#button_pre').append(txtbox); 
                 id++;
-                validCheck();  
+                validCheck(); 
+                storeValue(); 
         });
-        $('#button_pro').on('click', '#sub', function(){
-            var main=$(this).parent().prev().attr('id');
-            var mainrm=$(this).parent().attr('id');
-            $('#'+mainrm).slideUp('medium', function(){    
-            });
-            $('#input_'+id).remove();
-        });
-        console.log(button_pro);
-    }
+    }                   
     
-    function subDiv(){
-        $('#button_pro').on('click', '#sub', function(){
-            var main=$(this).parent().prev().attr('id');
-            var mainrm=$(this).parent().attr('id');
-            $('#'+mainrm).slideUp('medium', function(){
+    function subDiv(){    
+        $('.divi').on('click','#sub',function(){
+
+            $(this).parents('.space').slideUp('medium',function(){
+                $(this).parents('.space').remove();
             });
-            $('#input_'+id).remove();
         });
+    }
+
+    function storeValue(){
+        $('.ip_address').each(function(){
+            alert($(this).val());
+            textArray.push($(this).val());
+        });
+        console.log(textArray);
     }
 });
