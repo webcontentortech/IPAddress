@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
 <link rel="stylesheet" type="text/css" href="ip.css">
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="https://raw.githubusercontent.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script>
+<script src= "http://underscorejs.org/underscore.js"></script>
+<!-- <script type="text/javascript" src="https://raw.githubusercontent.com/igorescobar/jQuery-Mask-Plugin/master/src/jquery.mask.js"></script> -->
 <script type="text/javascript" src="ip.js"></script>
-
-    <title>IP Validator</title>
+<script type="text/javascript">
+    
+</script>
 </head>
 <body>
-<div id="main">
-    <form style="width:750px; height: 350px; border:1px solid;">
-    <button>ShowAll</button><br />
-    <button class="clear">Clear</button>
-        <h2>Enter Your IP Address</h2>
-        <div id="button_pre" class="divi">
-	        <div class='space' id='input_1'>
-	            <input class="ip_address" id='input_1' placeholder="Enter IP Here" name="ip" type="text"/>
-	            <span><input type="button" value="Del" id="sub"  class="ip_valid"></span>
-	            <span><input type="button" value="Add" id="add" class="ip_valid"></span>
-	        </div>
+<div id="main1">
+<button id="show">ShowAll</button><button id="clear">ClearAll</button><br />
+<div id="divShowAll"></div><br />
+<div style="width:750px; height:50px;" id="value"></div>
+    <h2>Enter your IP Address</h2><br />
+    <div id="container" class="divi">
+        <div id="text_1" class='space'>
+            <span id="textbox">
+                <input type="text" class="val" id="first_0" size="1" maxlength="3"  key = "0" onkeyup = "prepareIp(this)"/>.
+                <input type="text" class="val" id="second_0" size="1" maxlength="3" key = "0" onkeyup = "prepareIp(this)"/>.
+                <input type="text" class="val" id="third_0" size="1" maxlength="3" key = "0" onkeyup = "prepareIp(this)"/>.
+                <input type="text" class="val" id="fourth_0" size="1" maxlength="3"  key = "0" onkeyup = "prepareIp(this)" />
+            </span>
+            <span>
+                <input type="button" value="Del" id="sub_0" key = "0"  class="ip_valid" onclick = "deleteDiv(this)">
+                <input type="button" value="Add" id="add_0" key = "0" onclick = "addDiv(this)" class="ip_valid">
+            </span>
         </div>
-    </form>
+    </div>
 </div>
 </body>
 </html>
