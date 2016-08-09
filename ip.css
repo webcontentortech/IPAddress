@@ -1,37 +1,36 @@
 h2{
-	margin-top: 40px;
+	margin-top: 20px;
 	margin-left: 8px;
 	margin-bottom: 8px;
 	text-align: center;
-}
-#put{
-	height:auto;
-	width:450px;
-}
-#put1{
-	height:auto;
-	width:450px;
-}
-#put2{
-	height:auto;
-	width:450px;
-}
-#put3{
-	height:auto;
-	width:450px;
-}
-#put4{
-	height:auto;
-	width:450px;
-}
-#put5{
-	height:auto;
-	width:450px;
 }
 button{
 	margin-top: 5px;
 	margin-left: 4px;
 }
-.clear{
-	
+#main1{
+	width:950px; 
+	height: 450px; 
+	border:1px solid;
+}
+.space{
+	width: 400px;
+	height: 25px;
+	border: none;
+	margin-left: 250px
+}
+.val{
+	text-align: center;
+	border: none;
+}
+#allip{
+	width: 750px;
+	height: 50px;
+}
+#clear{
+	float:right;
+    margin-right: 0.9375rem;
+}
+#textbox{
+	border: 2px solid;
 }
